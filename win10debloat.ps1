@@ -35,6 +35,9 @@ $tweaks = @(
 	"Install7Zip",
 	# "InstallNotepadplusplus",
 	# "InstallMediaPlayerClassic",
+	"InstallFirefox",
+	"InstallChrome",
+	# "InstallPutty",
 
 	### Windows Apps
 	"DebloatAll",
@@ -201,7 +204,7 @@ Function InstallTitusProgs {
 	choco install chocolatey-core.extension -y
 	Write-Output "Running O&O Shutup with Recommended Settings"
 	Import-Module BitsTransfer
-	Start-BitsTransfer -Source "https://raw.githubusercontent.com/ChrisTitusTech/win10script/master/ooshutup10.cfg" -Destination ooshutup10.cfg
+	Start-BitsTransfer -Source "https://raw.githubusercontent.com/ironman820/win10script/minis/ooshutup10.cfg" -Destination ooshutup10.cfg
 	Start-BitsTransfer -Source "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe" -Destination OOSU10.exe
 	./OOSU10.exe ooshutup10.cfg /quiet
 }
@@ -229,6 +232,21 @@ Function InstallNotepadplusplus {
 Function InstallMediaPlayerClassic {
 	Write-Output "Installing Media Player Classic (VLC Alternative)"
 	choco install mpc-hc -y
+}
+
+Function InstallFirefox {
+	Write-Output "Installing Firefox"
+	choco install firefox -y
+}
+
+Function InstallChrome {
+	Write-Output "Installing Chrome"
+	choco install googlechrome -y
+}
+
+Function InstallPutty {
+	Write-Output "Installing Putty"
+	choco install putty -y
 }
 
 ##########
